@@ -31,8 +31,8 @@ public class Main {
         System.out.println(point2);
 
         // String
-        String message = "hello world";
-        message += "!!";
+        String message = " hello world";
+        message += "!!  ";
         System.out.println(message);
         System.out.println(message.length());
         System.out.println(message.toUpperCase());
@@ -42,5 +42,94 @@ public class Main {
         System.out.println(message.indexOf("e"));
         System.out.println(message.indexOf("ell"));
         System.out.println(message.indexOf("a")); // this will be -1
+        System.out.println(message.trim());
+
+        // escape sequences
+        System.out.println("Hello \"Rahul\"");
+
+        // Arrays
+        int[] numbers = new int[5];
+        numbers[0] = 1;
+        numbers[2] = 34;
+        System.out.println(numbers);
+        System.out.println(Arrays.toString(numbers));
+
+        int[] newNumbers = {1, 2, 3, 0, 5, 4};
+        System.out.println(newNumbers.length);
+        System.out.println(Arrays.toString(newNumbers));
+        Arrays.sort(newNumbers);
+        System.out.println(Arrays.toString(newNumbers));
+        System.out.println(newNumbers[3]);
+
+        // M D array
+        int[][] twoDimension = new int[2][3];
+        twoDimension[0][0] = 1;
+        // use deepToString for multi dimensional array
+        System.out.println(Arrays.deepToString(twoDimension));
+
+        // constant
+        // final is use to make a var constant, we cannot change the value after making it final
+        // use capital letters to represent a constant pi should be written as PI
+        final float PI = 3.14F;
+
+        // without casting
+        int answer = 10 / 3;
+        System.out.println(answer);
+
+        // with casting
+        double answerWithDecimal = (double) 10 / (double) 3;
+        System.out.println(answerWithDecimal);
+
+        // implicit casting
+        // byte > short > int > long > float > double
+        short z = 1;
+        int o = z + 2;
+        System.out.println(o);
+
+        // explicit casting
+        double a = 1.1;
+        int b = (int) a + 2;
+        System.out.println(b);
+
+        // all this is done with compatible type only
+        // for String to int the above 2 procedures are not valid
+        // for that we have to use wrapper classes
+        String name = "1";
+        int sum = Integer.parseInt(name) + 2;
+        System.out.println(sum);
+
+        // Math class
+
+        System.out.println(Math.round(1.1));
+        System.out.println(Math.ceil(1.1));
+        System.out.println(Math.floor(1.1));
+        System.out.println(Math.max(1, 3));
+        System.out.println(Math.min(4, 10));
+        System.out.println(Math.random()); // between 0 and 1
+        System.out.println(Math.random() * 100); // between 0 and 100 double
+        System.out.println((int) (Math.random() * 100)); // between 0 and 100 integer
+
+        // number formatting
+        String result = NumberFormat.getCurrencyInstance().format(112443.547);
+        System.out.println(result);
+        result = NumberFormat.getPercentInstance().format(0.1);
+        System.out.println(result);
+
+        // input using Scanner
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter age:");
+        byte ageNew = scanner.nextByte();
+        System.out.println("Your age is " + ageNew);
+        System.out.print("Enter your name:");
+        String firstName = scanner.next();
+        System.out.println("name is " + firstName);
+        // if you enter "rahul bhoir", it will only read "rahul"
+        // because "rahul" and "bhoir" are 2 token and .next() will read only the first token
+        // to read "rahul bhoir" we have to use .nextLine()
+        System.out.print("Enter your full name:");
+        String fullName = scanner.nextLine().trim();
+        System.out.println("Full name: " + fullName);
+
+
     }
 }
