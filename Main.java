@@ -1,5 +1,3 @@
-package com.rahul;
-
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -19,7 +17,6 @@ public class Main {
 
         Date now = new Date();
         System.out.println(now);
-
         // reference type
         byte p = 1;
         byte q = p;
