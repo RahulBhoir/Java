@@ -1,3 +1,5 @@
+package com.rahul;
+
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -17,6 +19,7 @@ public class Main {
 
         Date now = new Date();
         System.out.println(now);
+
         // reference type
         byte p = 1;
         byte q = p;
@@ -130,6 +133,31 @@ public class Main {
         String fullName = scanner.nextLine().trim();
         System.out.println("Full name: " + fullName);
 
+        // ternary operator
+        int income = 100_00;
+        String className = income < 100_000 ? "Economy" : "First";
+        System.out.println(className);
 
+        // switch
+        String role = "user";
+        switch (role){
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "user":
+                System.out.println("You're a user");
+                break;
+            default:
+                System.out.println("You're a guest");
+
+        }
+        // for loop
+        int[] array = {1,2,3};
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+        // for each
+        for(int num:array)
+            System.out.println(num);
     }
 }
