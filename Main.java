@@ -1,10 +1,54 @@
-package com.rahul;
-
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
+
+class Casio {
+    // method overloading
+    public void add(int i, int j) {
+        System.out.println(i + j);
+    }
+
+    public void add(int i, int j, int k) {
+        System.out.println(i + j + k);
+    }
+
+    public void add(double i, double j) {
+        System.out.println(i + j);
+    }
+}
+
+class Calc {
+    int num1;
+    int num2;
+    int result;
+
+    // constructor has
+    // 1. same name as class
+    // 2. does not return any value
+    // 3. will be called automatically when the object is created
+    public Calc() {
+        System.out.println("constructor started");
+        num1 = 1;
+        num2 = 3;
+    }
+
+    // constructor overloading
+    // this is same as method overloading
+    // we can have multiple constructors but they should have different parameters
+    public Calc(int num1) {
+        System.out.println("constructor started");
+        // this keyword is used to tell the difference between instance var and local var
+        // only use when instance and local var have same name
+        this.num1 = num1;
+    }
+
+    public Calc(double n) {
+        System.out.println("constructor started");
+        num1 = (int) n;
+    }
+}
 
 public class Main {
 
@@ -21,6 +65,7 @@ public class Main {
         System.out.println(now);
 
         // reference type
+        System.out.println("reference type");
         byte p = 1;
         byte q = p;
         p = 3;
@@ -34,6 +79,7 @@ public class Main {
         System.out.println(point2);
 
         // String
+        System.out.println("String");
         String message = " hello world";
         message += "!!  ";
         System.out.println(message);
@@ -48,9 +94,11 @@ public class Main {
         System.out.println(message.trim());
 
         // escape sequences
+        System.out.println("escape sequences");
         System.out.println("Hello \"Rahul\"");
 
         // Arrays
+        System.out.println("Arrays");
         int[] numbers = new int[5];
         numbers[0] = 1;
         numbers[2] = 34;
@@ -65,6 +113,7 @@ public class Main {
         System.out.println(newNumbers[3]);
 
         // M D array
+        System.out.println("Multi dimensional array");
         int[][] twoDimension = new int[2][3];
         twoDimension[0][0] = 1;
         // use deepToString for multi dimensional array
@@ -73,23 +122,28 @@ public class Main {
         // constant
         // final is use to make a var constant, we cannot change the value after making it final
         // use capital letters to represent a constant pi should be written as PI
+        System.out.println("constant");
         final float PI = 3.14F;
 
         // without casting
+        System.out.println("without casting");
         int answer = 10 / 3;
         System.out.println(answer);
 
         // with casting
+        System.out.println("with casting");
         double answerWithDecimal = (double) 10 / (double) 3;
         System.out.println(answerWithDecimal);
 
         // implicit casting
+        System.out.println("implicit casting");
         // byte > short > int > long > float > double
         short z = 1;
         int o = z + 2;
         System.out.println(o);
 
         // explicit casting
+        System.out.println("explicit casting");
         double a = 1.1;
         int b = (int) a + 2;
         System.out.println(b);
@@ -102,7 +156,7 @@ public class Main {
         System.out.println(sum);
 
         // Math class
-
+        System.out.println("Math class");
         System.out.println(Math.round(1.1));
         System.out.println(Math.ceil(1.1));
         System.out.println(Math.floor(1.1));
@@ -113,12 +167,14 @@ public class Main {
         System.out.println((int) (Math.random() * 100)); // between 0 and 100 integer
 
         // number formatting
+        System.out.println("number formatting");
         String result = NumberFormat.getCurrencyInstance().format(112443.547);
         System.out.println(result);
         result = NumberFormat.getPercentInstance().format(0.1);
         System.out.println(result);
 
         // input using Scanner
+        System.out.println("input using Scanner");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter age:");
         byte ageNew = scanner.nextByte();
@@ -134,13 +190,15 @@ public class Main {
         System.out.println("Full name: " + fullName);
 
         // ternary operator
+        System.out.println("ternary operator");
         int income = 100_00;
         String className = income < 100_000 ? "Economy" : "First";
         System.out.println(className);
 
         // switch
+        System.out.println("switch");
         String role = "user";
-        switch (role){
+        switch (role) {
             case "admin":
                 System.out.println("You're an admin");
                 break;
@@ -152,12 +210,42 @@ public class Main {
 
         }
         // for loop
-        int[] array = {1,2,3};
+        System.out.println("for loop");
+        int[] array = {1, 2, 3};
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
         // for each
-        for(int num:array)
+        System.out.println("for each loop");
+        for (int num : array)
             System.out.println(num);
+
+        //while loop
+        System.out.println("while loop");
+        int i = 0;
+        while (i < array.length) {
+            System.out.println(array[i]);
+            i++;
+        }
+
+        // do while loop
+        System.out.println("do while loop");
+        int j = 0;
+        do {
+            System.out.println(array[j]);
+            j++;
+        } while (j < 0);
+
+        // constructor
+        System.out.println("constructor");
+        Calc obj = new Calc(7.5); // Calc() is the default constructor for allocating space for the object
+        System.out.println("value set by constructor:" + obj.num1);
+
+        // method overloading
+        System.out.println("method overloading");
+        Casio object = new Casio();
+        object.add(2, 1, 5);
+        object.add(4.3, 7.1);
+
     }
 }
