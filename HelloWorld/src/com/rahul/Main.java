@@ -1,3 +1,5 @@
+package com.rahul;
+
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
@@ -118,6 +120,27 @@ public class Main {
         twoDimension[0][0] = 1;
         // use deepToString for multi dimensional array
         System.out.println(Arrays.deepToString(twoDimension));
+
+        // jagged array: length of every array is not same
+        int[][] jag = {
+                {1,2,3},
+                {4,5},
+                {6,7,8}
+        };
+        for (int[] ints : jag) {
+            for (int anInt : ints) {
+                System.out.print(anInt);
+
+            }
+            System.out.println();
+        }
+        // array of objects
+//        System.out.println("array of objects");
+//        Calc[] asd = new Calc[4];
+//        asd[1].num1 = 1;
+//        asd[1].num2 = 2;
+//        System.out.println(asd[1].num1 + asd[1].num2);
+//        System.out.println(Arrays.toString(asd));
 
         // constant
         // final is use to make a var constant, we cannot change the value after making it final
@@ -246,6 +269,7 @@ public class Main {
         Casio object = new Casio();
         object.add(2, 1, 5);
         object.add(4.3, 7.1);
+
 
     }
 }

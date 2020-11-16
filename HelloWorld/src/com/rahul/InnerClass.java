@@ -1,3 +1,9 @@
+package com.rahul;
+
+//Inner class has 3 type:
+//member class
+//static class
+//anonymous class
 class Outer {
     int j;
 
@@ -18,10 +24,11 @@ public class InnerClass {
         // to use Inner class we have to use the Outer Class
         // in order to create object of Inner class we have to use object of Outer class
 
-        // for non static class
+        // for non static class(member class)
 //        Outer.Inner in = obj.new Inner();
 //        in.show();
 
+        // static inner class
         Outer.Inner in = new Outer.Inner();
         in.show();
 

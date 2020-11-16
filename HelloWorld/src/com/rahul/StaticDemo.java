@@ -1,5 +1,4 @@
-/////////////////comment line 37 to run the program successfully//////////////////
-
+package com.rahul;
 
 // class is loaded only once
 class Emp {
@@ -36,7 +35,7 @@ public class StaticDemo {
     int i = 3;
 
     public static void main(String[] args) {
-        i =7; // error
+//        i =7; // error
         // this will give an error because i is not a static variable
         // and main block is static
         // to use i in main block we have to declare static int i =3;
@@ -49,5 +48,7 @@ public class StaticDemo {
         Emp.ceo = "";
         sonu.show();
         nimo.show();
+
+
     }
 }
