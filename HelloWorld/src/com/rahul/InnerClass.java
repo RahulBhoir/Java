@@ -1,4 +1,4 @@
-package com.rahul;
+package HelloWorld.src.com.rahul;
 
 //Inner class has 3 type:
 //member class

@@ -1,4 +1,4 @@
-package com.rahul;
+package HelloWorld.src.com.rahul;
 
 // class is loaded only once
 class Emp {
@@ -13,9 +13,10 @@ class Emp {
     // and is executed when we load a class
     // static block will be executed before the constructor as class is loaded first
     // cannot use non static variables in static block
+    // static var cannot be used in non-static method
     static {
         ceo = "rahul";
-        System.out.println("in static");
+        System.out.println("in static block");
     }
 
     // executed when an object is created
@@ -32,7 +33,7 @@ class Emp {
 
 public class StaticDemo {
 
-    int i = 3;
+   int i = 3;
 
     public static void main(String[] args) {
 //        i =7; // error

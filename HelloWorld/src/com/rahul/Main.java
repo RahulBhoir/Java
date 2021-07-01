@@ -1,25 +1,10 @@
-package com.rahul;
+package HelloWorld.src.com.rahul;
 
 import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
-
-class Casio {
-    // method overloading
-    public void add(int i, int j) {
-        System.out.println(i + j);
-    }
-
-    public void add(int i, int j, int k) {
-        System.out.println(i + j + k);
-    }
-
-    public void add(double i, double j) {
-        System.out.println(i + j);
-    }
-}
 
 class Calc {
     int num1;
@@ -43,6 +28,7 @@ class Calc {
         System.out.println("constructor started");
         // this keyword is used to tell the difference between instance var and local var
         // only use when instance and local var have same name
+        // number1 is local variavble and num1 is instance variable
         this.num1 = num1;
     }
 
@@ -53,7 +39,10 @@ class Calc {
 }
 
 public class Main {
-
+//    main method is public because it should be used from anywhere
+//    and it is static because as it's the starting point of the code
+//    it will not have a obj associated with it, but still it should be executed
+//    for that the main method should be a class level method therefore static
     public static void main(String[] args) {
         // write your code here
         System.out.println("Hello World");
@@ -64,7 +53,7 @@ public class Main {
         long number = 30_478_459_134L;
 
         Date now = new Date();
-        System.out.println(now);
+        System.out.println("today is "+now);
 
         // reference type
         System.out.println("reference type");
@@ -81,7 +70,7 @@ public class Main {
         System.out.println(point2);
 
         // String
-        System.out.println("String");
+        System.out.println("////////////////////////////String////////////////////////////");
         String message = " hello world";
         message += "!!  ";
         System.out.println(message);
@@ -186,8 +175,8 @@ public class Main {
         System.out.println(Math.max(1, 3));
         System.out.println(Math.min(4, 10));
         System.out.println(Math.random()); // between 0 and 1
-        System.out.println(Math.random() * 100); // between 0 and 100 double
-        System.out.println((int) (Math.random() * 100)); // between 0 and 100 integer
+        System.out.println(Math.random() * 100); // between 0 and 100 (type = double)
+        System.out.println((int) (Math.random() * 100)); // between 0 and 100 (type = integer)
 
         // number formatting
         System.out.println("number formatting");
@@ -264,11 +253,6 @@ public class Main {
         Calc obj = new Calc(7.5); // Calc() is the default constructor for allocating space for the object
         System.out.println("value set by constructor:" + obj.num1);
 
-        // method overloading
-        System.out.println("method overloading");
-        Casio object = new Casio();
-        object.add(2, 1, 5);
-        object.add(4.3, 7.1);
 
 
     }
